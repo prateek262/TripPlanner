@@ -1,0 +1,29 @@
+{
+  "name": "tripplanner",
+  "version": "1.0.0",
+  "description": "Personalized Trip Planner with AI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "node-fetch": "^2.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateek262/AiTripPlanner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prateek262/AiTripPlanner/issues"
+  },
+  "homepage": "https://github.com/prateek262/AiTripPlanner#readme"
+}

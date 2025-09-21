@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trip Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-title">AI Personalized Trip Planner</h1>
+        <p id="subtitle">Craft your perfect journey, powered by AI.</p>
+
+        <form id="plannerForm">
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="destination" id="destination-label">Destination</label>
+                    <input type="text" id="destination" name="destination" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="language" id="language-label">Language</label>
+                    <select id="language" name="language">
+                        <option value="English">English</option>
+                        <option value="English-IN">English - India</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="French">French</option>
+                        <option value="German">German</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Russian">Russian</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget" id="budget-label">Total Budget</label>
+                    <div class="budget-group">
+                        <input type="number" id="budget" name="budget" required>
+                        <select id="currency" name="currency"></select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="people" id="people-label">Number of People</label>
+                    <input type="number" id="people" name="people" min="1" value="1" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="days" id="days-label">Number of Days</label>
+                    <input type="number" id="days" name="days" min="1" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="interests" id="interests-label">Interests (e.g., history, food, adventure)</label>
+                    <input type="text" id="interests" name="interests" required>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit" id="generate-btn">Generate Itinerary</button>
+            </div>
+        </form>
+
+        <div id="loading" style="display:none;">Generating your personalized trip...</div>
+        <div id="itinerary-result" style="display:none;"></div>
+
+        <!-- Post-Trip Creations Section -->
+        <div id="post-trip-section" style="display:none;">
+            <h2>Post-Trip Creations</h2>
+            <p>Turn your memories into stories.</p>
+            
+            <div class="creation-group">
+                <h3>Generate a Travel Blog Post</h3>
+                <div class="form-group">
+                    <label for="blog-tone">Select a Tone:</label>
+                    <select id="blog-tone">
+                        <option value="adventurous">Adventurous</option>
+                        <option value="relaxed">Relaxed</option>
+                        <option value="humorous">Humorous</option>
+                        <option value="informative">Informative</option>
+                    </select>
+                </div>
+                <button id="generate-blog-btn">Create Blog Post</button>
+                <div id="blog-content-wrapper" class="content-wrapper" style="display:none;">
+                    <h4>Your Travel Blog Draft:</h4>
+                    <div id="blog-content" class="generated-content"></div>
+                </div>
+            </div>
+
+            <div class="creation-group">
+                <h3>Create Social Media Captions</h3>
+                <button id="generate-social-btn">Create Captions</button>
+                <div id="social-content-wrapper" class="content-wrapper" style="display:none;">
+                    <h4>Suggested Social Media Posts:</h4>
+                    <div id="social-content" class="generated-content"></div>
+                </div>
+            </div>
+
+            <div class="creation-group">
+                <h3>Build a "Memory Map"</h3>
+                <button id="generate-map-btn">Show Trip on Map</button>
+                <div id="map-container" style="display:none; height: 400px; border-radius: 8px; margin-top: 15px;"></div>
+            </div>
+        </div>
+        <!-- END of Post-Trip Section -->
+    </div>
+
+    <!-- Library Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap&libraries=marker" async defer></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
